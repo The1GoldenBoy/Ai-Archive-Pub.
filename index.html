@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTLI Project Archive - Navigation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #1e3a8a;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #dc2626;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .file-card {
+            background: #f8f9fa;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .file-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .file-name {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .file-description {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .file-link {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .file-link:hover {
+            background: #1e40af;
+        }
+        
+        .stats {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .stats h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+        
+        .stat-label {
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .deployment-note {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .deployment-note h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+        }
+        
+        .deployment-note p {
+            color: #78350f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 MTLI Project Archive</h1>
+        
+        <div class="deployment-note">
+            <h3>📍 Important: Files are Currently Local</h3>
+            <p>These files are stored locally in your workspace. To get web links, deploy to hosting or set up local server. All links below will work once deployed.</p>
+        </div>
+        
+        <div class="stats">
+            <h2>Project Overview</h2>
+            <p>Complete autonomous lead generation system built April 2-3, 2026</p>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Landing Pages</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">280K+</div>
+                    <div class="stat-label">Bytes of Code</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50-100</div>
+                    <div class="stat-label">Leads/Month Target</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$300K</div>
+                    <div class="stat-label">Monthly Revenue Potential</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📱 Landing Pages (Ready for Deployment)</h2>
+            <div class="file-grid">
+                <div class="file-card">
+                    <div class="file-name">Master Landing Page</div>
+                    <div class="file-description">Complete solutions overview with ROI calculator and 14-question assessment form</div>
+                    <a href="landing_pages/MTLI_Master_Landing_Page.html" class="file-link">View Page (25.9KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Warehouse Automation</div>
+                    <div class="file-description">ASRS, robotics, conveyors with interactive ROI calculator and case studies</div>
+                    <a href="landing_pages/warehouse_automation.html" class="file-link">View Page (32.2KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Storage & Racking</div>
+                    <div class="file-description">Selective, high-density, ASRS systems with comparison tables</div>
+                    <a href="landing_pages/storage_racking.html" class="file-link">View Page (39.1KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Mezzanine Systems</div>
+                    <div class="file-description">Multi-level platforms with cost comparison vs expansion options</div>
+                    <a href="landing_pages/mezzanine_systems.html" class="file-link">View Page (40.8KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Conveyor Systems</div>
+                    <div class="file-description">Material flow automation with performance metrics and flow visualization</div>
+                    <a href="landing_pages/conveyor_systems.html" class="file-link">View Page (43.5KB)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>💻 Backend System (CRM & Lead Processing)</h2>
+            <div class="file-grid">
+                <div class="file-card">
+                    <div class="file-name">Lead Processor</div>
+                    <div class="file-description">PHP engine with intelligent scoring, auto-notifications, and CRM integration</div>
+                    <a href="backend/lead_processor.php" class="file-link">View Code (13.5KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Database Setup</div>
+                    <div class="file-description">Complete MySQL structure with 7 tables, indexes, and sample data</div>
+                    <a href="backend/database_setup.sql" class="file-link">View SQL (8.8KB)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🧠 Intelligence System</h2>
+            <div class="file-grid">
+                <div class="file-card">
+                    <div class="file-name">Memory Core</div>
+                    <div class="file-description">Advanced memory system with semantic search and predictive intelligence</div>
+                    <a href="memory_system_core.py" class="file-link">View Code (20.3KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Knowledge Graph</div>
+                    <div class="file-description">Entity relationships (Max, MTLI, contacts, projects)</div>
+                    <a href="intelligence/knowledge_graph.json" class="file-link">View Data (3.5KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Success Patterns</div>
+                    <div class="file-description">Industry conversion rates, optimal timing, and proven strategies</div>
+                    <a href="intelligence/success_patterns.json" class="file-link">View Data (3.8KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Lead Intelligence</div>
+                    <div class="file-description">Prospect scoring algorithms and conversion optimization</div>
+                    <a href="intelligence/lead_intelligence.json" class="file-link">View Data (5.6KB)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📊 Analysis & Strategy</h2>
+            <div class="file-grid">
+                <div class="file-card">
+                    <div class="file-name">Company Analysis</div>
+                    <div class="file-description">Complete MTLI breakdown with competitive advantages and opportunities</div>
+                    <a href="MTLI_Company_Analysis.md" class="file-link">View Analysis (3.6KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Master Sales Deck</div>
+                    <div class="file-description">11-slide conversion-focused presentation with ROI focus</div>
+                    <a href="MTLI_Master_Sales_Deck.md" class="file-link">View Deck (6.9KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Lead Generation Strategy</div>
+                    <div class="file-description">7-phase autonomous system for 50-100 qualified leads/month</div>
+                    <a href="Lead_Generation_Strategy.md" class="file-link">View Strategy (8.5KB)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 Implementation Guides</h2>
+            <div class="file-grid">
+                <div class="file-card">
+                    <div class="file-name">Deployment Guide</div>
+                    <div class="file-description">Complete step-by-step instructions for launching the system</div>
+                    <a href="deployment_guide.md" class="file-link">View Guide (10.5KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Image Sources</div>
+                    <div class="file-description">Professional imagery sourcing guide with budget estimates</div>
+                    <a href="image_sources.md" class="file-link">View Guide (7.2KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Task Management</div>
+                    <div class="file-description">TickTick setup for cross-platform project coordination</div>
+                    <a href="TickTick_Setup_Instructions.md" class="file-link">View Setup (4.6KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Project Archive</div>
+                    <div class="file-description">Master reference document for all components built</div>
+                    <a href="PROJECT_ARCHIVE.md" class="file-link">View Archive (9.8KB)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🗂️ Memory & Workspace</h2>
+            <div class="file-grid">
+                <div class="file-card">
+                    <div class="file-name">Long-term Memory</div>
+                    <div class="file-description">Comprehensive memory of Max's background, goals, and preferences</div>
+                    <a href="MEMORY.md" class="file-link">View Memory (3.7KB)</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">Daily Logs</div>
+                    <div class="file-description">Project timeline and daily progress tracking</div>
+                    <a href="memory/" class="file-link">View Logs</a>
+                </div>
+                <div class="file-card">
+                    <div class="file-name">User Profile</div>
+                    <div class="file-description">Max's complete background and business objectives</div>
+                    <a href="USER.md" class="file-link">View Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: white; border-radius: 12px;">
+            <h2 style="color: #059669; margin-bottom: 15px;">🚀 Ready for Deployment</h2>
+            <p style="color: #6b7280; font-size: 1.1rem;">
+                Complete autonomous lead generation system built in 2 days.<br>
+                Deploy to web hosting to activate all links and start generating leads 24/7.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
