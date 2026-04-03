@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTLI Group - Industrial Solutions That Pay for Themselves</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #dc2626;
+        }
+        
+        /* ROI Banner */
+        .roi-banner {
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 20px 0;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Services Grid */
+        .services {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3a8a;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #3b82f6;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        
+        .service-card p {
+            margin-bottom: 25px;
+            color: #6b7280;
+        }
+        
+        .roi-stats {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .roi-stats .stat {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .roi-stats .stat:last-child {
+            margin-bottom: 0;
+            border-top: 2px solid #3b82f6;
+            padding-top: 10px;
+            color: #ef4444;
+        }
+        
+        .learn-more {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .learn-more:hover {
+            background: #1e40af;
+        }
+        
+        /* Case Study */
+        .case-study {
+            background: #1e3a8a;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .case-study h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .case-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+        
+        .case-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+        
+        .stat-label {
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        /* Questionnaire */
+        .questionnaire {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .questionnaire h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        
+        .questionnaire-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+            color: #6b7280;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 50px;
+            border-radius: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .submit-button {
+            background: #ef4444;
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #dc2626;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-bottom: 40px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: #fbbf24;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2.5rem; }
+            .header p { font-size: 1.2rem; }
+            .case-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <h1>Industrial Solutions That Pay for Themselves</h1>
+            <p>40+ Years of Warehouse Automation & Material Handling Excellence</p>
+            <a href="#questionnaire" class="cta-button">Get Your Free ROI Assessment</a>
+        </div>
+    </div>
+
+    <!-- ROI Banner -->
+    <div class="roi-banner">
+        <div class="container">
+            ⚡ Typical ROI: 18-24 months | Labor savings: 40-60% | Capacity increase: 200-400% ⚡
+        </div>
+    </div>
+
+    <!-- Services -->
+    <div class="services">
+        <div class="container">
+            <h2>Complete Industrial Solutions Portfolio</h2>
+            <div class="services-grid">
+                <!-- Warehouse Automation -->
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Warehouse Automation</h3>
+                    <p>ASRS systems, conveyor networks, robotics, and goods-to-person solutions that eliminate manual handling and maximize throughput.</p>
+                    <div class="roi-stats">
+                        <div class="stat"><span>Labor Reduction:</span><span>40-60%</span></div>
+                        <div class="stat"><span>Accuracy:</span><span>99.9%+</span></div>
+                        <div class="stat"><span>Throughput:</span><span>200-400%</span></div>
+                        <div class="stat"><span>ROI Timeline:</span><span>12-18 months</span></div>
+                    </div>
+                    <a href="warehouse_automation.html" class="learn-more">View Details & Case Studies</a>
+                </div>
+
+                <!-- Storage & Racking -->
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Storage & Racking Systems</h3>
+                    <p>Selective and high-density pallet racking, mezzanines, and rack-supported buildings that maximize every cubic foot.</p>
+                    <div class="roi-stats">
+                        <div class="stat"><span>Space Efficiency:</span><span>50-300%</span></div>
+                        <div class="stat"><span>Storage Density:</span><span>2-5x increase</span></div>
+                        <div class="stat"><span>Access Speed:</span><span>30-50% faster</span></div>
+                        <div class="stat"><span>ROI Timeline:</span><span>6-12 months</span></div>
+                    </div>
+                    <a href="storage_racking.html" class="learn-more">View Details & Case Studies</a>
+                </div>
+
+                <!-- Mezzanine Systems -->
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Mezzanine Solutions</h3>
+                    <p>Multi-level storage and work platforms that double or triple your usable space without expanding your footprint.</p>
+                    <div class="roi-stats">
+                        <div class="stat"><span>Space Increase:</span><span>100-200%</span></div>
+                        <div class="stat"><span>Construction Cost:</span><span>60% less than expansion</span></div>
+                        <div class="stat"><span>Installation:</span><span>2-4 weeks</span></div>
+                        <div class="stat"><span>ROI Timeline:</span><span>8-15 months</span></div>
+                    </div>
+                    <a href="mezzanine_systems.html" class="learn-more">View Details & Case Studies</a>
+                </div>
+
+                <!-- Conveyor Systems -->
+                <div class="service-card">
+                    <div class="service-icon">🚚</div>
+                    <h3>Conveyor & Sortation</h3>
+                    <p>Automated material flow systems that eliminate manual transport and optimize order fulfillment speed.</p>
+                    <div class="roi-stats">
+                        <div class="stat"><span>Processing Speed:</span><span>300-500% faster</span></div>
+                        <div class="stat"><span>Labor Savings:</span><span>30-50%</span></div>
+                        <div class="stat"><span>Error Reduction:</span><span>95%+ accuracy</span></div>
+                        <div class="stat"><span>ROI Timeline:</span><span>15-20 months</span></div>
+                    </div>
+                    <a href="conveyor_systems.html" class="learn-more">View Details & Case Studies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Study -->
+    <div class="case-study">
+        <div class="container">
+            <h2>Real Results: E-Commerce Distribution Center</h2>
+            <div class="case-grid">
+                <div class="case-content">
+                    <h3>Challenge: 300% Growth, Same Space</h3>
+                    <p>A major e-commerce fulfillment center needed to triple their capacity without expanding their warehouse footprint. Manual processes couldn't scale with their explosive growth.</p>
+                    
+                    <h3 style="margin-top: 40px;">Solution: Integrated Automation</h3>
+                    <p>MTLI designed and installed a complete solution: ASRS system + conveyor network + mezzanine expansion + automated sortation.</p>
+                </div>
+                
+                <div class="case-stats">
+                    <div class="stat-box">
+                        <div class="stat-number">400%</div>
+                        <div class="stat-label">Capacity Increase</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">60%</div>
+                        <div class="stat-label">Labor Reduction</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">$3.2M</div>
+                        <div class="stat-label">Annual Savings</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">21 mo</div>
+                        <div class="stat-label">Full Payback</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questionnaire -->
+    <div class="questionnaire" id="questionnaire">
+        <div class="container">
+            <h2>Get Your Custom ROI Assessment</h2>
+            <p class="questionnaire-subtitle">Help us understand your operation so we can provide accurate projections and recommendations</p>
+            
+            <div class="form-container">
+                <form id="assessmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company Name*</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry*</label>
+                            <select id="industry" name="industry" required>
+                                <option value="">Select Industry</option>
+                                <option value="ecommerce">E-commerce Fulfillment</option>
+                                <option value="3pl">3PL & Logistics</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="food-beverage">Food & Beverage</option>
+                                <option value="cold-storage">Cold Storage</option>
+                                <option value="retail">Retail Distribution</option>
+                                <option value="pharmaceutical">Pharmaceutical</option>
+                                <option value="automotive">Automotive</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="facility-size">Warehouse Size (sq ft)*</label>
+                            <select id="facility-size" name="facility-size" required>
+                                <option value="">Select Size</option>
+                                <option value="under-25k">Under 25,000 sq ft</option>
+                                <option value="25k-50k">25,000 - 50,000 sq ft</option>
+                                <option value="50k-100k">50,000 - 100,000 sq ft</option>
+                                <option value="100k-250k">100,000 - 250,000 sq ft</option>
+                                <option value="250k-500k">250,000 - 500,000 sq ft</option>
+                                <option value="over-500k">Over 500,000 sq ft</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="daily-volume">Daily Order Volume*</label>
+                            <select id="daily-volume" name="daily-volume" required>
+                                <option value="">Select Volume</option>
+                                <option value="under-500">Under 500 orders</option>
+                                <option value="500-1000">500 - 1,000 orders</option>
+                                <option value="1000-5000">1,000 - 5,000 orders</option>
+                                <option value="5000-10000">5,000 - 10,000 orders</option>
+                                <option value="10000-25000">10,000 - 25,000 orders</option>
+                                <option value="over-25000">Over 25,000 orders</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="current-challenges">Current Operational Challenges* (Select all that apply)</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="labor-costs"> Rising labor costs</label>
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="space-constraints"> Space constraints</label>
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="accuracy-issues"> Accuracy issues</label>
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="fulfillment-speed"> Slow fulfillment</label>
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="peak-capacity"> Peak season capacity</label>
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="inventory-visibility"> Inventory visibility</label>
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="safety-concerns"> Safety concerns</label>
+                            <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="scaling-growth"> Scaling with growth</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="timeline">Implementation Timeline*</label>
+                            <select id="timeline" name="timeline" required>
+                                <option value="">Select Timeline</option>
+                                <option value="immediate">Immediate (0-3 months)</option>
+                                <option value="short-term">Short-term (3-6 months)</option>
+                                <option value="medium-term">Medium-term (6-12 months)</option>
+                                <option value="long-term">Long-term (12+ months)</option>
+                                <option value="planning">Planning phase</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget-range">Budget Range</label>
+                            <select id="budget-range" name="budget-range">
+                                <option value="">Select Budget</option>
+                                <option value="under-100k">Under $100K</option>
+                                <option value="100k-250k">$100K - $250K</option>
+                                <option value="250k-500k">$250K - $500K</option>
+                                <option value="500k-1m">$500K - $1M</option>
+                                <option value="1m-2.5m">$1M - $2.5M</option>
+                                <option value="over-2.5m">Over $2.5M</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name*</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Job Title*</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional-info">Additional Information</label>
+                        <textarea id="additional-info" name="additional-info" rows="4" placeholder="Tell us about any specific requirements, constraints, or goals for your project..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Get My Custom ROI Assessment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="contact-info">
+                <h3>Ready to Transform Your Operation?</h3>
+                <p><strong>Maxime Jodoin</strong> - Industrial Solutions Specialist</p>
+                <p>Email: maxime.j@mtli.ca</p>
+                <p>Phone: [Your Phone Number]</p>
+                <p>MTLI Group - 40+ Years of Excellence</p>
+            </div>
+            <p>&copy; 2026 MTLI Group. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Handle regular fields
+            for (let [key, value] of formData.entries()) {
+                if (key !== 'challenges') {
+                    data[key] = value;
+                }
+            }
+            
+            // Handle checkboxes
+            const challenges = [];
+            const checkboxes = document.querySelectorAll('input[name="challenges"]:checked');
+            checkboxes.forEach(checkbox => {
+                challenges.push(checkbox.value);
+            });
+            data.challenges = challenges;
+            
+            // Calculate lead score
+            let score = 50; // Base score
+            
+            // Industry scoring
+            if (data.industry === 'ecommerce') score += 25;
+            else if (data.industry === '3pl') score += 30;
+            else if (data.industry === 'manufacturing') score += 20;
+            
+            // Size scoring
+            if (data['facility-size'] === 'over-500k') score += 20;
+            else if (data['facility-size'] === '250k-500k') score += 15;
+            else if (data['facility-size'] === '100k-250k') score += 10;
+            
+            // Volume scoring
+            if (data['daily-volume'] === 'over-25000') score += 25;
+            else if (data['daily-volume'] === '10000-25000') score += 20;
+            else if (data['daily-volume'] === '5000-10000') score += 15;
+            
+            // Timeline scoring
+            if (data.timeline === 'immediate') score += 30;
+            else if (data.timeline === 'short-term') score += 20;
+            else if (data.timeline === 'medium-term') score += 10;
+            
+            // Budget scoring
+            if (data['budget-range'] === 'over-2.5m') score += 25;
+            else if (data['budget-range'] === '1m-2.5m') score += 20;
+            else if (data['budget-range'] === '500k-1m') score += 15;
+            
+            data.leadScore = Math.min(score, 100);
+            
+            // In a real implementation, this would send to your CRM
+            console.log('Lead Data:', data);
+            
+            // Show success message
+            alert('Thank you! We\'ll have your custom ROI assessment ready within 24 hours. Check your email for next steps.');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

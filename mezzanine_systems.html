@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mezzanine Solutions - Double Your Space Without Expanding | MTLI Group</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .header-text p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .roi-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .roi-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .roi-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+        
+        .roi-label {
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #dc2626;
+        }
+        
+        .header-visual {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .visual-placeholder {
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+        
+        /* Solutions Grid */
+        .solutions {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .solutions h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #7c3aed;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .solution-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 40px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            background: #a855f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #7c3aed;
+        }
+        
+        .solution-card p {
+            margin-bottom: 25px;
+            color: #6b7280;
+        }
+        
+        .specs-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .specs-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .cost-comparison {
+            background: #f3f4f6;
+            padding: 80px 0;
+        }
+        
+        .comparison-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .comparison-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #7c3aed;
+        }
+        
+        .comparison-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-card.recommended {
+            background: #7c3aed;
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .comparison-card.recommended::before {
+            content: "RECOMMENDED";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .comparison-cost {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ef4444;
+            margin-bottom: 10px;
+        }
+        
+        .comparison-card.recommended .comparison-cost {
+            color: #fbbf24;
+        }
+        
+        .comparison-timeline {
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        
+        .comparison-features {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .comparison-features li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .comparison-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .comparison-card.recommended .comparison-features li::before {
+            color: #fbbf24;
+        }
+        
+        .roi-calculator {
+            background: #7c3aed;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .calculator-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .calculator-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .input-group {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 20px;
+            border-radius: 12px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .results-section {
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .result-item {
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .case-studies h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #7c3aed;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .case-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .case-header {
+            margin-bottom: 30px;
+        }
+        
+        .case-tag {
+            background: #a855f7;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .case-title {
+            font-size: 1.5rem;
+            color: #7c3aed;
+            margin-bottom: 10px;
+        }
+        
+        .case-subtitle {
+            color: #6b7280;
+        }
+        
+        .case-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ef4444;
+        }
+        
+        /* Contact Form */
+        .contact-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-content h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #7c3aed;
+        }
+        
+        .contact-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: #6b7280;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #7c3aed;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #a855f7;
+        }
+        
+        .submit-button {
+            background: #ef4444;
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #dc2626;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { grid-template-columns: 1fr; }
+            .roi-highlights { grid-template-columns: 1fr; }
+            .solutions-grid { grid-template-columns: 1fr; }
+            .comparison-cards { grid-template-columns: 1fr; }
+            .calculator-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Mezzanine Solutions</h1>
+                    <p>Double your usable space without expanding your footprint. Add multi-level storage, office space, or production areas in weeks, not months.</p>
+                    
+                    <div class="roi-highlights">
+                        <div class="roi-item">
+                            <div class="roi-number">100-200%</div>
+                            <div class="roi-label">Space Increase</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">60%</div>
+                            <div class="roi-label">Less Cost vs Expansion</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">2-4 weeks</div>
+                            <div class="roi-label">Installation Time</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">8-15 mo</div>
+                            <div class="roi-label">ROI Timeline</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="cta-button">Get Your Space Assessment</a>
+                </div>
+                
+                <div class="header-visual">
+                    <div class="visual-placeholder">
+                        🏗️🏢<br>
+                        <div style="font-size: 1rem; margin-top: 20px; opacity: 0.8;">
+                            [Two-story mezzanine platform with stairs, railings, and office space above warehouse operations]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions -->
+    <div class="solutions">
+        <div class="container">
+            <h2>Complete Mezzanine Portfolio</h2>
+            <div class="solutions-grid">
+                <!-- Storage Mezzanines -->
+                <div class="solution-card">
+                    <div class="solution-icon">📦</div>
+                    <h3>Storage Mezzanines</h3>
+                    <p>Multi-level storage platforms that maximize your vertical space for inventory, equipment, or materials storage.</p>
+                    <ul class="specs-list">
+                        <li><span>Load Capacity:</span><span>125-250 lbs/sq ft</span></li>
+                        <li><span>Clear Height:</span><span>7-8 feet minimum</span></li>
+                        <li><span>Size Range:</span><span>1,000-50,000+ sq ft</span></li>
+                        <li><span>Access Options:</span><span>Stairs, elevators, conveyors</span></li>
+                        <li><span>Integration:</span><span>Racking, shelving compatible</span></li>
+                    </ul>
+                </div>
+
+                <!-- Office Mezzanines -->
+                <div class="solution-card">
+                    <div class="solution-icon">🏢</div>
+                    <h3>Office Mezzanines</h3>
+                    <p>Elevated office space that maximizes your warehouse operations while providing professional workspace above.</p>
+                    <ul class="specs-list">
+                        <li><span>Load Capacity:</span><span>80-100 lbs/sq ft</span></li>
+                        <li><span>Features:</span><span>HVAC, electrical, data ready</span></li>
+                        <li><span>Finishes:</span><span>Carpet, tile, professional walls</span></li>
+                        <li><span>Windows:</span><span>Operations oversight capability</span></li>
+                        <li><span>Compliance:</span><span>Building code compliant</span></li>
+                    </ul>
+                </div>
+
+                <!-- Production Mezzanines -->
+                <div class="solution-card">
+                    <div class="solution-icon">⚙️</div>
+                    <h3>Production Mezzanines</h3>
+                    <p>Heavy-duty platforms for manufacturing equipment, assembly operations, or specialized production processes.</p>
+                    <ul class="specs-list">
+                        <li><span>Load Capacity:</span><span>250-500+ lbs/sq ft</span></li>
+                        <li><span>Vibration:</span><span>Equipment-rated construction</span></li>
+                        <li><span>Utilities:</span><span>Power, compressed air, data</span></li>
+                        <li><span>Safety:</span><span>Industrial railings, fall protection</span></li>
+                        <li><span>Access:</span><span>Freight elevators, wide stairs</span></li>
+                    </ul>
+                </div>
+
+                <!-- Specialized Platforms -->
+                <div class="solution-card">
+                    <div class="solution-icon">🔧</div>
+                    <h3>Specialized Platforms</h3>
+                    <p>Custom-engineered solutions for unique applications including catwalks, maintenance platforms, and equipment access.</p>
+                    <ul class="specs-list">
+                        <li><span>Applications:</span><span>Equipment access, maintenance</span></li>
+                        <li><span>Materials:</span><span>Steel, aluminum, composite</span></li>
+                        <li><span>Coatings:</span><span>Corrosion-resistant options</span></li>
+                        <li><span>Design:</span><span>Custom engineered</span></li>
+                        <li><span>Compliance:</span><span>OSHA, building codes</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cost Comparison -->
+    <div class="cost-comparison">
+        <div class="container">
+            <div class="comparison-content">
+                <h2>Mezzanine vs Building Expansion</h2>
+                <p>Compare your options for gaining additional space</p>
+                
+                <div class="comparison-cards">
+                    <!-- Building Addition -->
+                    <div class="comparison-card">
+                        <h3 class="comparison-title">Building Addition</h3>
+                        <div class="comparison-cost">$150-200</div>
+                        <div>per sq ft</div>
+                        <div class="comparison-timeline">6-18 months timeline</div>
+                        <ul class="comparison-features">
+                            <li>New foundation required</li>
+                            <li>Extensive permitting</li>
+                            <li>Weather dependent</li>
+                            <li>Utilities extension</li>
+                            <li>Property limitations</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mezzanine -->
+                    <div class="comparison-card recommended">
+                        <h3 class="comparison-title">Mezzanine Platform</h3>
+                        <div class="comparison-cost">$60-100</div>
+                        <div>per sq ft</div>
+                        <div class="comparison-timeline">2-8 weeks timeline</div>
+                        <ul class="comparison-features">
+                            <li>Uses existing structure</li>
+                            <li>Minimal permitting</li>
+                            <li>Indoor installation</li>
+                            <li>Existing utilities</li>
+                            <li>Flexible placement</li>
+                        </ul>
+                    </div>
+
+                    <!-- Lease Additional Space -->
+                    <div class="comparison-card">
+                        <h3 class="comparison-title">Lease New Space</h3>
+                        <div class="comparison-cost">$8-15</div>
+                        <div>per sq ft/year</div>
+                        <div class="comparison-timeline">3-6 months timeline</div>
+                        <ul class="comparison-features">
+                            <li>Ongoing monthly cost</li>
+                            <li>Moving expenses</li>
+                            <li>Split operations</li>
+                            <li>Lease commitments</li>
+                            <li>Location limitations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROI Calculator -->
+    <div class="roi-calculator">
+        <div class="container">
+            <div class="calculator-content">
+                <h2>Calculate Your Mezzanine ROI</h2>
+                <p>See how much you could save with a mezzanine solution</p>
+                
+                <div class="calculator-grid">
+                    <div class="input-group">
+                        <label for="space-needed">Additional Space Needed (sq ft)</label>
+                        <input type="number" id="space-needed" placeholder="5,000" onchange="calculateMezzanineROI()">
+                    </div>
+                    <div class="input-group">
+                        <label for="current-rent">Current Rent ($/sq ft/year)</label>
+                        <input type="number" id="current-rent" placeholder="12" onchange="calculateMezzanineROI()">
+                    </div>
+                    <div class="input-group">
+                        <label for="mezzanine-type">Mezzanine Type</label>
+                        <select id="mezzanine-type" onchange="calculateMezzanineROI()">
+                            <option value="">Select Type</option>
+                            <option value="storage">Storage Platform ($65/sq ft)</option>
+                            <option value="office">Office Space ($85/sq ft)</option>
+                            <option value="production">Production Platform ($120/sq ft)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="results-section" id="mezzanine-results" style="display: none;">
+                    <h3>Your Mezzanine Investment Analysis</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-number" id="investment-cost">$0</div>
+                            <div>Total Investment</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="annual-rent-avoided">$0</div>
+                            <div>Annual Rent Avoided</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="vs-expansion-savings">$0</div>
+                            <div>Savings vs Expansion</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="payback-timeline">0 mo</div>
+                            <div>Payback Period</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Studies -->
+    <div class="case-studies">
+        <div class="container">
+            <h2>Mezzanine Success Stories</h2>
+            <div class="cases-grid">
+                <!-- Case Study 1 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-tag">E-commerce Fulfillment</div>
+                        <h3 class="case-title">180% Space Increase</h3>
+                        <p class="case-subtitle">Online retailer - 50,000 sq ft facility</p>
+                    </div>
+                    
+                    <p>Challenge: Explosive growth requiring additional picking and packing space, but lease prevented building expansion.</p>
+                    
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">9,000</div>
+                            <div>Sq Ft Added</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$540K</div>
+                            <div>Investment Cost</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$108K</div>
+                            <div>Annual Rent Avoided</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">6 weeks</div>
+                            <div>Installation Time</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Solution:</strong> Two-level storage mezzanine with conveyor integration for efficient picking operations and 180% capacity increase.</p>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-tag">Manufacturing</div>
+                        <h3 class="case-title">Office + Production Space</h3>
+                        <p class="case-subtitle">Automotive supplier - 75,000 sq ft plant</p>
+                    </div>
+                    
+                    <p>Challenge: Need additional office space for growing engineering team plus extra production capacity for new contracts.</p>
+                    
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">12,000</div>
+                            <div>Sq Ft Added</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$960K</div>
+                            <div>Investment Cost</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$1.8M</div>
+                            <div>Expansion Cost Avoided</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">8 weeks</div>
+                            <div>Total Project Time</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Solution:</strong> Dual-purpose mezzanine: finished office space (4,000 sq ft) plus production platform (8,000 sq ft) with equipment access.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Get Your Mezzanine Assessment</h2>
+                <p class="contact-subtitle">Let's design the perfect space solution for your facility</p>
+                
+                <div class="form-container">
+                    <form id="mezzanineForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company Name*</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="industry">Industry*</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="distribution">Distribution/Warehouse</option>
+                                    <option value="ecommerce">E-commerce Fulfillment</option>
+                                    <option value="automotive">Automotive</option>
+                                    <option value="food-beverage">Food & Beverage</option>
+                                    <option value="electronics">Electronics</option>
+                                    <option value="pharmaceutical">Pharmaceutical</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="facility-size">Current Facility Size (sq ft)</label>
+                                <input type="number" id="facility-size" name="facility-size" placeholder="e.g., 75000">
+                            </div>
+                            <div class="form-group">
+                                <label for="ceiling-height">Available Ceiling Height (ft)</label>
+                                <input type="number" id="ceiling-height" name="ceiling-height" placeholder="e.g., 24">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mezzanine-purpose">Mezzanine Purpose (Select all that apply)</label>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                                <label style="font-weight: normal;"><input type="checkbox" name="purposes" value="storage"> Additional Storage</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="purposes" value="office"> Office Space</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="purposes" value="production"> Production Area</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="purposes" value="shipping"> Shipping/Receiving</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="purposes" value="quality"> Quality Control</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="purposes" value="maintenance"> Maintenance Shop</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="space-needed">Additional Space Needed (sq ft)</label>
+                                <input type="number" id="space-needed-form" name="space-needed" placeholder="e.g., 5000">
+                            </div>
+                            <div class="form-group">
+                                <label for="load-requirements">Load Requirements</label>
+                                <select id="load-requirements" name="load-requirements">
+                                    <option value="">Select Load Type</option>
+                                    <option value="light">Light Storage (50-100 lbs/sq ft)</option>
+                                    <option value="medium">Medium Storage (125-200 lbs/sq ft)</option>
+                                    <option value="heavy">Heavy/Equipment (250+ lbs/sq ft)</option>
+                                    <option value="office">Office Use (80 lbs/sq ft)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="timeline">Implementation Timeline*</label>
+                                <select id="timeline" name="timeline" required>
+                                    <option value="">Select Timeline</option>
+                                    <option value="immediate">Immediate (0-2 months)</option>
+                                    <option value="short-term">Short-term (2-4 months)</option>
+                                    <option value="medium-term">Medium-term (4-8 months)</option>
+                                    <option value="long-term">Long-term (8+ months)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Project Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select Budget</option>
+                                    <option value="under-250k">Under $250K</option>
+                                    <option value="250k-500k">$250K - $500K</option>
+                                    <option value="500k-750k">$500K - $750K</option>
+                                    <option value="750k-1m">$750K - $1M</option>
+                                    <option value="over-1m">Over $1M</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Job Title*</label>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional-info">Project Details</label>
+                            <textarea id="additional-info" name="additional-info" rows="4" placeholder="Tell us about your space constraints, specific requirements, or any unique considerations for your mezzanine project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">Get My Mezzanine Assessment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateMezzanineROI() {
+            const spaceNeeded = parseFloat(document.getElementById('space-needed').value) || 0;
+            const currentRent = parseFloat(document.getElementById('current-rent').value) || 0;
+            const mezzanineType = document.getElementById('mezzanine-type').value;
+            
+            if (spaceNeeded > 0 && currentRent > 0 && mezzanineType) {
+                // Cost per sq ft by type
+                const costs = {
+                    'storage': 65,
+                    'office': 85,
+                    'production': 120
+                };
+                
+                const costPerSqFt = costs[mezzanineType];
+                const investmentCost = spaceNeeded * costPerSqFt;
+                const annualRentAvoided = spaceNeeded * currentRent;
+                
+                // Compare to building expansion (estimate $175/sq ft)
+                const expansionCost = spaceNeeded * 175;
+                const vsExpansionSavings = expansionCost - investmentCost;
+                
+                // Calculate payback period
+                const paybackMonths = Math.round(investmentCost / (annualRentAvoided / 12));
+                
+                // Update display
+                document.getElementById('investment-cost').textContent = '$' + investmentCost.toLocaleString();
+                document.getElementById('annual-rent-avoided').textContent = '$' + annualRentAvoided.toLocaleString();
+                document.getElementById('vs-expansion-savings').textContent = '$' + vsExpansionSavings.toLocaleString();
+                document.getElementById('payback-timeline').textContent = paybackMonths + ' mo';
+                
+                document.getElementById('mezzanine-results').style.display = 'block';
+            }
+        }
+
+        document.getElementById('mezzanineForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Handle regular fields
+            for (let [key, value] of formData.entries()) {
+                if (key !== 'purposes') {
+                    data[key] = value;
+                }
+            }
+            
+            // Handle checkboxes for purposes
+            const purposes = [];
+            const checkboxes = document.querySelectorAll('input[name="purposes"]:checked');
+            checkboxes.forEach(checkbox => {
+                purposes.push(checkbox.value);
+            });
+            data.purposes = purposes;
+            
+            // Calculate lead score for mezzanine solutions
+            let score = 55; // Base score for mezzanine interest
+            
+            // Industry scoring
+            if (data.industry === 'manufacturing') score += 25;
+            else if (data.industry === 'distribution') score += 20;
+            else if (data.industry === 'ecommerce') score += 22;
+            
+            // Facility size scoring
+            const facilitySize = parseInt(data['facility-size']) || 0;
+            if (facilitySize > 100000) score += 20;
+            else if (facilitySize > 50000) score += 15;
+            else if (facilitySize > 25000) score += 10;
+            
+            // Space needed scoring
+            const spaceNeeded = parseInt(data['space-needed']) || 0;
+            if (spaceNeeded > 10000) score += 20;
+            else if (spaceNeeded > 5000) score += 15;
+            else if (spaceNeeded > 2500) score += 10;
+            
+            // Budget scoring
+            if (data.budget === 'over-1m') score += 25;
+            else if (data.budget === '750k-1m') score += 20;
+            else if (data.budget === '500k-750k') score += 15;
+            
+            // Timeline scoring
+            if (data.timeline === 'immediate') score += 30;
+            else if (data.timeline === 'short-term') score += 20;
+            
+            // Ceiling height scoring (higher ceiling = better mezzanine opportunity)
+            const ceilingHeight = parseInt(data['ceiling-height']) || 0;
+            if (ceilingHeight >= 24) score += 15;
+            else if (ceilingHeight >= 20) score += 10;
+            else if (ceilingHeight >= 16) score += 5;
+            
+            // Purpose scoring (more purposes = higher priority)
+            score += purposes.length * 3;
+            
+            data.leadScore = Math.min(score, 100);
+            data.leadType = 'mezzanine_systems';
+            
+            console.log('Mezzanine Lead:', data);
+            
+            alert('Thank you! Our mezzanine specialists will contact you within 24 hours with a preliminary assessment and design concepts.');
+            this.reset();
+            document.getElementById('mezzanine-results').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

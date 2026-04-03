@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Automation Solutions - MTLI Group</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .header-text p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .roi-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .roi-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .roi-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+        
+        .roi-label {
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #dc2626;
+        }
+        
+        .header-visual {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .visual-placeholder {
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+        
+        /* Solutions Grid */
+        .solutions {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .solutions h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3a8a;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .solution-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 40px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            background: #3b82f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e3a8a;
+        }
+        
+        .solution-card p {
+            margin-bottom: 25px;
+            color: #6b7280;
+        }
+        
+        .specs-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .specs-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .roi-calculator {
+            background: #1e3a8a;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .calculator-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .calculator-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .input-group {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 20px;
+            border-radius: 12px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .results-section {
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .result-item {
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .case-studies {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .case-studies h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3a8a;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .case-header {
+            margin-bottom: 30px;
+        }
+        
+        .case-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .case-title {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        
+        .case-subtitle {
+            color: #6b7280;
+        }
+        
+        .case-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ef4444;
+        }
+        
+        /* Contact Form */
+        .contact-section {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-content h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1e3a8a;
+        }
+        
+        .contact-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: #6b7280;
+        }
+        
+        .form-container {
+            background: #f8f9fa;
+            padding: 50px;
+            border-radius: 12px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #1e3a8a;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+        
+        .submit-button {
+            background: #ef4444;
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #dc2626;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { grid-template-columns: 1fr; }
+            .roi-highlights { grid-template-columns: 1fr; }
+            .solutions-grid { grid-template-columns: 1fr; }
+            .calculator-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Warehouse Automation Solutions</h1>
+                    <p>Eliminate manual processes, maximize throughput, and achieve 99.9% accuracy with our proven automation systems.</p>
+                    
+                    <div class="roi-highlights">
+                        <div class="roi-item">
+                            <div class="roi-number">40-60%</div>
+                            <div class="roi-label">Labor Reduction</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">200-400%</div>
+                            <div class="roi-label">Throughput Increase</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">99.9%</div>
+                            <div class="roi-label">Accuracy Rate</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">12-18 mo</div>
+                            <div class="roi-label">ROI Timeline</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="cta-button">Get Your Custom Quote</a>
+                </div>
+                
+                <div class="header-visual">
+                    <div class="visual-placeholder">
+                        🏭<br>
+                        <div style="font-size: 1rem; margin-top: 20px; opacity: 0.8;">
+                            [Automated warehouse with ASRS systems, conveyor belts, and robotic solutions working in perfect harmony]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions -->
+    <div class="solutions">
+        <div class="container">
+            <h2>Complete Automation Portfolio</h2>
+            <div class="solutions-grid">
+                <!-- ASRS -->
+                <div class="solution-card">
+                    <div class="solution-icon">📦</div>
+                    <h3>ASRS (Automated Storage & Retrieval)</h3>
+                    <p>High-density storage with computer-controlled systems that automatically store and retrieve products with perfect accuracy.</p>
+                    <ul class="specs-list">
+                        <li><span>Storage Density:</span><span>3-5x increase</span></li>
+                        <li><span>Retrieval Speed:</span><span>200+ moves/hour</span></li>
+                        <li><span>Accuracy:</span><span>99.99%</span></li>
+                        <li><span>Labor Reduction:</span><span>80%+</span></li>
+                        <li><span>Space Utilization:</span><span>Up to 40 feet high</span></li>
+                    </ul>
+                </div>
+
+                <!-- Conveyor Systems -->
+                <div class="solution-card">
+                    <div class="solution-icon">🚚</div>
+                    <h3>Conveyor & Sortation Systems</h3>
+                    <p>Automated material flow that eliminates manual transport and optimizes order fulfillment processes.</p>
+                    <ul class="specs-list">
+                        <li><span>Sorting Speed:</span><span>5,000+ items/hour</span></li>
+                        <li><span>Accuracy:</span><span>99.9%+</span></li>
+                        <li><span>Labor Savings:</span><span>40-60%</span></li>
+                        <li><span>Throughput:</span><span>300% increase</span></li>
+                        <li><span>Integration:</span><span>WMS/ERP compatible</span></li>
+                    </ul>
+                </div>
+
+                <!-- Robotics -->
+                <div class="solution-card">
+                    <div class="solution-icon">🤖</div>
+                    <h3>Robotic Picking & Packing</h3>
+                    <p>Advanced robotics that handle repetitive tasks with speed and precision, working alongside human operators.</p>
+                    <ul class="specs-list">
+                        <li><span>Pick Rate:</span><span>600+ picks/hour</span></li>
+                        <li><span>Operating Time:</span><span>24/7 capability</span></li>
+                        <li><span>Error Rate:</span><span>Less than 0.1%</span></li>
+                        <li><span>ROI:</span><span>18-24 months</span></li>
+                        <li><span>Scalability:</span><span>Modular expansion</span></li>
+                    </ul>
+                </div>
+
+                <!-- Goods-to-Person -->
+                <div class="solution-card">
+                    <div class="solution-icon">👥</div>
+                    <h3>Goods-to-Person Systems</h3>
+                    <p>Automated systems that bring products to workers, eliminating travel time and maximizing picking efficiency.</p>
+                    <ul class="specs-list">
+                        <li><span>Pick Productivity:</span><span>400% increase</span></li>
+                        <li><span>Walking Eliminated:</span><span>95%+ reduction</span></li>
+                        <li><span>Order Accuracy:</span><span>99.9%+</span></li>
+                        <li><span>Footprint:</span><span>50% space savings</span></li>
+                        <li><span>Ergonomics:</span><span>Reduced injuries</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROI Calculator -->
+    <div class="roi-calculator">
+        <div class="container">
+            <div class="calculator-content">
+                <h2>Calculate Your Automation ROI</h2>
+                <p>See how much you could save with warehouse automation</p>
+                
+                <div class="calculator-grid">
+                    <div class="input-group">
+                        <label for="current-labor-cost">Monthly Labor Cost</label>
+                        <input type="number" id="current-labor-cost" placeholder="$50,000" onchange="calculateROI()">
+                    </div>
+                    <div class="input-group">
+                        <label for="daily-orders">Daily Orders</label>
+                        <input type="number" id="daily-orders" placeholder="1,000" onchange="calculateROI()">
+                    </div>
+                    <div class="input-group">
+                        <label for="warehouse-size">Warehouse Size (sq ft)</label>
+                        <input type="number" id="warehouse-size" placeholder="100,000" onchange="calculateROI()">
+                    </div>
+                </div>
+                
+                <div class="results-section" id="results" style="display: none;">
+                    <h3>Your Projected Savings with Automation</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-number" id="monthly-savings">$0</div>
+                            <div>Monthly Savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="annual-savings">$0</div>
+                            <div>Annual Savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="productivity-gain">0%</div>
+                            <div>Productivity Increase</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="payback-period">0 mo</div>
+                            <div>Payback Period</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Studies -->
+    <div class="case-studies">
+        <div class="container">
+            <h2>Proven Results from Real Implementations</h2>
+            <div class="cases-grid">
+                <!-- Case Study 1 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-tag">E-Commerce Fulfillment</div>
+                        <h3 class="case-title">400% Capacity Increase</h3>
+                        <p class="case-subtitle">Major online retailer - 250,000 sq ft facility</p>
+                    </div>
+                    
+                    <p>Challenge: Handle Black Friday volume year-round without expanding facility footprint. Manual processes couldn't scale with 300% growth.</p>
+                    
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">400%</div>
+                            <div>Capacity Increase</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$3.2M</div>
+                            <div>Annual Savings</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">60%</div>
+                            <div>Labor Reduction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">21 mo</div>
+                            <div>Full Payback</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Solution:</strong> Integrated ASRS + conveyor network + automated sortation system handling 25,000 orders/day with 99.9% accuracy.</p>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-tag">3PL Logistics</div>
+                        <h3 class="case-title">Multi-Client Optimization</h3>
+                        <p class="case-subtitle">Regional 3PL - 150,000 sq ft facility</p>
+                    </div>
+                    
+                    <p>Challenge: Serve multiple clients efficiently while maintaining separate inventory and meeting SLA requirements for each.</p>
+                    
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">250%</div>
+                            <div>Throughput Gain</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$1.8M</div>
+                            <div>Annual Savings</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">45%</div>
+                            <div>Cost Reduction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">16 mo</div>
+                            <div>ROI Timeline</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Solution:</strong> Modular automation with client-specific zones, automated inventory tracking, and flexible picking systems.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Get Your Automation Assessment</h2>
+                <p class="contact-subtitle">Let's discuss how automation can transform your warehouse operations</p>
+                
+                <div class="form-container">
+                    <form id="automationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company Name*</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="industry">Industry*</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="ecommerce">E-commerce Fulfillment</option>
+                                    <option value="3pl">3PL & Logistics</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="retail">Retail Distribution</option>
+                                    <option value="food">Food & Beverage</option>
+                                    <option value="pharmaceutical">Pharmaceutical</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="current-volume">Current Daily Volume</label>
+                                <input type="number" id="current-volume" name="current-volume" placeholder="e.g., 5000 orders/day">
+                            </div>
+                            <div class="form-group">
+                                <label for="facility-size">Facility Size (sq ft)</label>
+                                <input type="number" id="facility-size" name="facility-size" placeholder="e.g., 150000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="automation-interest">Automation Solutions of Interest</label>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                                <label style="font-weight: normal;"><input type="checkbox" name="solutions" value="asrs"> ASRS Systems</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="solutions" value="conveyor"> Conveyor & Sortation</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="solutions" value="robotics"> Robotic Picking</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="solutions" value="goods-to-person"> Goods-to-Person</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="timeline">Implementation Timeline*</label>
+                                <select id="timeline" name="timeline" required>
+                                    <option value="">Select Timeline</option>
+                                    <option value="immediate">Immediate (0-3 months)</option>
+                                    <option value="short-term">Short-term (3-6 months)</option>
+                                    <option value="medium-term">Medium-term (6-12 months)</option>
+                                    <option value="long-term">Long-term (12+ months)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Project Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select Budget</option>
+                                    <option value="500k-1m">$500K - $1M</option>
+                                    <option value="1m-2.5m">$1M - $2.5M</option>
+                                    <option value="2.5m-5m">$2.5M - $5M</option>
+                                    <option value="over-5m">Over $5M</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Job Title*</label>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="challenges">Current Operational Challenges</label>
+                            <textarea id="challenges" name="challenges" rows="4" placeholder="Describe your current challenges with manual processes, capacity constraints, accuracy issues, etc."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">Get My Automation Assessment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateROI() {
+            const laborCost = parseFloat(document.getElementById('current-labor-cost').value) || 0;
+            const dailyOrders = parseFloat(document.getElementById('daily-orders').value) || 0;
+            const warehouseSize = parseFloat(document.getElementById('warehouse-size').value) || 0;
+            
+            if (laborCost > 0 && dailyOrders > 0) {
+                // Estimated savings calculations
+                const laborSavings = laborCost * 0.5; // 50% labor savings
+                const productivityGain = Math.min(400, (dailyOrders / 100) * 20); // Scale with volume
+                const monthlySavings = laborSavings + (dailyOrders * 30 * 0.5); // Labor + efficiency gains
+                const annualSavings = monthlySavings * 12;
+                
+                // Estimated investment (rough calculation)
+                const estimatedInvestment = Math.max(500000, warehouseSize * 15); // $15/sq ft minimum
+                const paybackMonths = Math.round(estimatedInvestment / monthlySavings);
+                
+                // Update display
+                document.getElementById('monthly-savings').textContent = '$' + monthlySavings.toLocaleString();
+                document.getElementById('annual-savings').textContent = '$' + annualSavings.toLocaleString();
+                document.getElementById('productivity-gain').textContent = Math.round(productivityGain) + '%';
+                document.getElementById('payback-period').textContent = paybackMonths + ' mo';
+                
+                document.getElementById('results').style.display = 'block';
+            }
+        }
+
+        document.getElementById('automationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Handle regular fields
+            for (let [key, value] of formData.entries()) {
+                if (key !== 'solutions') {
+                    data[key] = value;
+                }
+            }
+            
+            // Handle checkboxes for solutions
+            const solutions = [];
+            const checkboxes = document.querySelectorAll('input[name="solutions"]:checked');
+            checkboxes.forEach(checkbox => {
+                solutions.push(checkbox.value);
+            });
+            data.solutions = solutions;
+            
+            // Calculate lead score for automation
+            let score = 60; // Higher base for automation interest
+            
+            // Industry scoring
+            if (data.industry === 'ecommerce') score += 25;
+            else if (data.industry === '3pl') score += 30;
+            else if (data.industry === 'manufacturing') score += 20;
+            
+            // Volume scoring
+            const volume = parseInt(data['current-volume']) || 0;
+            if (volume > 10000) score += 25;
+            else if (volume > 5000) score += 20;
+            else if (volume > 1000) score += 15;
+            
+            // Budget scoring
+            if (data.budget === 'over-5m') score += 30;
+            else if (data.budget === '2.5m-5m') score += 25;
+            else if (data.budget === '1m-2.5m') score += 20;
+            
+            // Timeline scoring
+            if (data.timeline === 'immediate') score += 30;
+            else if (data.timeline === 'short-term') score += 20;
+            
+            data.leadScore = Math.min(score, 100);
+            data.leadType = 'warehouse_automation';
+            
+            console.log('Automation Lead:', data);
+            
+            alert('Thank you! Our automation specialists will contact you within 24 hours with a preliminary assessment.');
+            this.reset();
+            document.getElementById('results').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

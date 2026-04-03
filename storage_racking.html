@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage & Racking Solutions - MTLI Group</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .header-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .header-text p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .roi-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .roi-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .roi-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fbbf24;
+        }
+        
+        .roi-label {
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ef4444;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #dc2626;
+        }
+        
+        .header-visual {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .visual-placeholder {
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+        
+        /* Solutions Grid */
+        .solutions {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .solutions h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #059669;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .solution-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 40px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            background: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #059669;
+        }
+        
+        .solution-card p {
+            margin-bottom: 25px;
+            color: #6b7280;
+        }
+        
+        .specs-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .specs-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-section {
+            background: #f3f4f6;
+            padding: 80px 0;
+        }
+        
+        .comparison-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .comparison-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #059669;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .comparison-header {
+            background: #059669;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .comparison-row {
+            display: contents;
+        }
+        
+        .comparison-cell {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: center;
+        }
+        
+        .comparison-cell:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .best-option {
+            background: #ecfdf5;
+            color: #059669;
+            font-weight: 600;
+        }
+        
+        .roi-calculator {
+            background: #059669;
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .calculator-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .calculator-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+        
+        .input-group {
+            background: rgba(255,255,255,0.1);
+            padding: 30px 20px;
+            border-radius: 12px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .results-section {
+            background: #fbbf24;
+            color: #1f2937;
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .result-item {
+            text-align: center;
+        }
+        
+        .result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .case-studies h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #059669;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .case-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .case-header {
+            margin-bottom: 30px;
+        }
+        
+        .case-tag {
+            background: #10b981;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .case-title {
+            font-size: 1.5rem;
+            color: #059669;
+            margin-bottom: 10px;
+        }
+        
+        .case-subtitle {
+            color: #6b7280;
+        }
+        
+        .case-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ef4444;
+        }
+        
+        /* Contact Form */
+        .contact-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-content h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #059669;
+        }
+        
+        .contact-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: #6b7280;
+        }
+        
+        .form-container {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #059669;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #10b981;
+        }
+        
+        .submit-button {
+            background: #ef4444;
+            color: white;
+            padding: 20px 50px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #dc2626;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content { grid-template-columns: 1fr; }
+            .roi-highlights { grid-template-columns: 1fr; }
+            .solutions-grid { grid-template-columns: 1fr; }
+            .calculator-grid { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr 1fr; }
+            .cases-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Storage & Racking Solutions</h1>
+                    <p>Maximize every cubic foot with high-density storage systems that grow with your business.</p>
+                    
+                    <div class="roi-highlights">
+                        <div class="roi-item">
+                            <div class="roi-number">50-300%</div>
+                            <div class="roi-label">Space Efficiency</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">2-5x</div>
+                            <div class="roi-label">Storage Density</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">30-50%</div>
+                            <div class="roi-label">Faster Access</div>
+                        </div>
+                        <div class="roi-item">
+                            <div class="roi-number">6-12 mo</div>
+                            <div class="roi-label">ROI Timeline</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="cta-button">Get Your Storage Assessment</a>
+                </div>
+                
+                <div class="header-visual">
+                    <div class="visual-placeholder">
+                        📦🏢<br>
+                        <div style="font-size: 1rem; margin-top: 20px; opacity: 0.8;">
+                            [High-density pallet racking system with automated retrieval, reaching 40+ feet high with perfect organization]
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Solutions -->
+    <div class="solutions">
+        <div class="container">
+            <h2>Complete Storage & Racking Portfolio</h2>
+            <div class="solutions-grid">
+                <!-- Selective Pallet Racking -->
+                <div class="solution-card">
+                    <div class="solution-icon">📦</div>
+                    <h3>Selective Pallet Racking</h3>
+                    <p>Direct access to every pallet with maximum flexibility for varied inventory and frequent SKU changes.</p>
+                    <ul class="specs-list">
+                        <li><span>Height Capacity:</span><span>Up to 40+ feet</span></li>
+                        <li><span>Load Capacity:</span><span>4,000+ lbs/level</span></li>
+                        <li><span>SKU Accessibility:</span><span>100% direct access</span></li>
+                        <li><span>Space Utilization:</span><span>75-85% efficiency</span></li>
+                        <li><span>Configuration:</span><span>Fully adjustable</span></li>
+                    </ul>
+                </div>
+
+                <!-- High-Density Racking -->
+                <div class="solution-card">
+                    <div class="solution-icon">🏗️</div>
+                    <h3>High-Density Racking</h3>
+                    <p>Drive-in, push-back, and flow-through systems that maximize storage density for high-volume SKUs.</p>
+                    <ul class="specs-list">
+                        <li><span>Space Efficiency:</span><span>85-95% utilization</span></li>
+                        <li><span>Storage Increase:</span><span>40-60% vs selective</span></li>
+                        <li><span>FIFO/LIFO:</span><span>Both options available</span></li>
+                        <li><span>Pallet Depths:</span><span>2-20+ pallets deep</span></li>
+                        <li><span>Inventory Control:</span><span>Optimized for volume</span></li>
+                    </ul>
+                </div>
+
+                <!-- ASRS Rack Structures -->
+                <div class="solution-card">
+                    <div class="solution-icon">🤖</div>
+                    <h3>ASRS Rack Structures</h3>
+                    <p>Precision-engineered racking designed specifically for automated storage and retrieval systems.</p>
+                    <ul class="specs-list">
+                        <li><span>Precision:</span><span>±2mm tolerance</span></li>
+                        <li><span>Height Capacity:</span><span>Up to 130+ feet</span></li>
+                        <li><span>Storage Density:</span><span>300% increase</span></li>
+                        <li><span>Integration:</span><span>Seamless with automation</span></li>
+                        <li><span>Throughput:</span><span>200+ moves/hour</span></li>
+                    </ul>
+                </div>
+
+                <!-- Rack-Supported Buildings -->
+                <div class="solution-card">
+                    <div class="solution-icon">🏢</div>
+                    <h3>Rack-Supported Buildings</h3>
+                    <p>Structural racking systems that support the building roof and walls, eliminating need for separate structures.</p>
+                    <ul class="specs-list">
+                        <li><span>Cost Savings:</span><span>15-25% vs conventional</span></li>
+                        <li><span>Construction Speed:</span><span>30% faster build</span></li>
+                        <li><span>Space Efficiency:</span><span>95%+ utilization</span></li>
+                        <li><span>Height Options:</span><span>Up to 130 feet</span></li>
+                        <li><span>Structural Load:</span><span>Supports full building</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Section -->
+    <div class="comparison-section">
+        <div class="container">
+            <div class="comparison-content">
+                <h2>Choose the Right Storage Solution</h2>
+                <p>Compare storage systems to find the optimal fit for your operation</p>
+                
+                <div class="comparison-table">
+                    <div class="comparison-grid">
+                        <div class="comparison-header">Storage Type</div>
+                        <div class="comparison-header">Space Efficiency</div>
+                        <div class="comparison-header">SKU Access</div>
+                        <div class="comparison-header">Best For</div>
+                        
+                        <div class="comparison-row">
+                            <div class="comparison-cell">Selective Racking</div>
+                            <div class="comparison-cell">75-85%</div>
+                            <div class="comparison-cell">100% Direct</div>
+                            <div class="comparison-cell">High SKU variety</div>
+                        </div>
+                        
+                        <div class="comparison-row">
+                            <div class="comparison-cell">Drive-In Racking</div>
+                            <div class="comparison-cell best-option">85-90%</div>
+                            <div class="comparison-cell">LIFO Only</div>
+                            <div class="comparison-cell">High volume, few SKUs</div>
+                        </div>
+                        
+                        <div class="comparison-row">
+                            <div class="comparison-cell">Push-Back Racking</div>
+                            <div class="comparison-cell best-option">80-85%</div>
+                            <div class="comparison-cell">LIFO, Some Direct</div>
+                            <div class="comparison-cell">Medium volume</div>
+                        </div>
+                        
+                        <div class="comparison-row">
+                            <div class="comparison-cell">Pallet Flow</div>
+                            <div class="comparison-cell best-option">85-90%</div>
+                            <div class="comparison-cell">FIFO</div>
+                            <div class="comparison-cell">Fast-moving inventory</div>
+                        </div>
+                        
+                        <div class="comparison-row">
+                            <div class="comparison-cell">ASRS Racking</div>
+                            <div class="comparison-cell best-option">95%+</div>
+                            <div class="comparison-cell">100% Automated</div>
+                            <div class="comparison-cell">Maximum density</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROI Calculator -->
+    <div class="roi-calculator">
+        <div class="container">
+            <div class="calculator-content">
+                <h2>Calculate Your Storage ROI</h2>
+                <p>See how much space and money you could save with optimized racking</p>
+                
+                <div class="calculator-grid">
+                    <div class="input-group">
+                        <label for="current-space">Current Warehouse Size (sq ft)</label>
+                        <input type="number" id="current-space" placeholder="100,000" onchange="calculateStorageROI()">
+                    </div>
+                    <div class="input-group">
+                        <label for="storage-utilization">Current Storage Utilization</label>
+                        <select id="storage-utilization" onchange="calculateStorageROI()">
+                            <option value="">Select Current Efficiency</option>
+                            <option value="40">40% - Basic shelving</option>
+                            <option value="50">50% - Standard racking</option>
+                            <option value="65">65% - Organized racking</option>
+                            <option value="75">75% - Optimized racking</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="real-estate-cost">Real Estate Cost ($/sq ft/year)</label>
+                        <input type="number" id="real-estate-cost" placeholder="12" onchange="calculateStorageROI()">
+                    </div>
+                </div>
+                
+                <div class="results-section" id="storage-results" style="display: none;">
+                    <h3>Your Projected Storage Optimization</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <div class="result-number" id="space-gained">0 sq ft</div>
+                            <div>Additional Space Gained</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="annual-savings">$0</div>
+                            <div>Annual Real Estate Savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="capacity-increase">0%</div>
+                            <div>Storage Capacity Increase</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number" id="roi-months">0 mo</div>
+                            <div>ROI Timeline</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Studies -->
+    <div class="case-studies">
+        <div class="container">
+            <h2>Real Storage Optimization Success Stories</h2>
+            <div class="cases-grid">
+                <!-- Case Study 1 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-tag">Manufacturing</div>
+                        <h3 class="case-title">2.5x Storage Capacity</h3>
+                        <p class="case-subtitle">Automotive parts distributor - 200,000 sq ft</p>
+                    </div>
+                    
+                    <p>Challenge: Rapidly expanding inventory requiring expensive facility expansion or off-site storage.</p>
+                    
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">250%</div>
+                            <div>Capacity Increase</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$2.4M</div>
+                            <div>Expansion Cost Avoided</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">40%</div>
+                            <div>Pick Time Reduction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">8 mo</div>
+                            <div>Full Payback</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Solution:</strong> High-density push-back racking system with 35-foot height utilization, integrated with existing WMS.</p>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-card">
+                    <div class="case-header">
+                        <div class="case-tag">Food & Beverage</div>
+                        <h3 class="case-title">Cold Storage Optimization</h3>
+                        <p class="case-subtitle">Regional food distributor - 75,000 sq ft freezer</p>
+                    </div>
+                    
+                    <p>Challenge: Maximize expensive cold storage space while maintaining FIFO rotation and temperature integrity.</p>
+                    
+                    <div class="case-stats">
+                        <div class="stat">
+                            <div class="stat-value">180%</div>
+                            <div>Storage Density</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">$480K</div>
+                            <div>Annual Energy Savings</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">FIFO</div>
+                            <div>Perfect Rotation</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">12 mo</div>
+                            <div>ROI Timeline</div>
+                        </div>
+                    </div>
+                    
+                    <p><strong>Solution:</strong> Custom pallet flow racking with specialized cold storage materials and FIFO guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Get Your Storage Assessment</h2>
+                <p class="contact-subtitle">Let's optimize your storage capacity and efficiency</p>
+                
+                <div class="form-container">
+                    <form id="storageForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company Name*</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="industry">Industry*</label>
+                                <select id="industry" name="industry" required>
+                                    <option value="">Select Industry</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="distribution">Distribution/Wholesale</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="food-beverage">Food & Beverage</option>
+                                    <option value="automotive">Automotive</option>
+                                    <option value="pharmaceutical">Pharmaceutical</option>
+                                    <option value="cold-storage">Cold Storage</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="warehouse-size">Warehouse Size (sq ft)</label>
+                                <input type="number" id="warehouse-size" name="warehouse-size" placeholder="e.g., 150000">
+                            </div>
+                            <div class="form-group">
+                                <label for="current-storage">Current Storage System</label>
+                                <select id="current-storage" name="current-storage">
+                                    <option value="">Select Current System</option>
+                                    <option value="floor-stacking">Floor stacking</option>
+                                    <option value="basic-shelving">Basic shelving</option>
+                                    <option value="selective-racking">Selective pallet racking</option>
+                                    <option value="high-density">High-density racking</option>
+                                    <option value="mixed">Mixed systems</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="storage-challenges">Storage Challenges (Select all that apply)</label>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="space-constraints"> Running out of space</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="poor-utilization"> Poor space utilization</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="access-issues"> Difficult product access</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="inventory-rotation"> Inventory rotation problems</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="safety-concerns"> Safety concerns</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="expansion-costs"> High expansion costs</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="picking-efficiency"> Slow picking operations</label>
+                                <label style="font-weight: normal;"><input type="checkbox" name="challenges" value="inventory-accuracy"> Inventory accuracy issues</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="timeline">Implementation Timeline*</label>
+                                <select id="timeline" name="timeline" required>
+                                    <option value="">Select Timeline</option>
+                                    <option value="immediate">Immediate (0-3 months)</option>
+                                    <option value="short-term">Short-term (3-6 months)</option>
+                                    <option value="medium-term">Medium-term (6-12 months)</option>
+                                    <option value="long-term">Long-term (12+ months)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Project Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select Budget</option>
+                                    <option value="under-100k">Under $100K</option>
+                                    <option value="100k-250k">$100K - $250K</option>
+                                    <option value="250k-500k">$250K - $500K</option>
+                                    <option value="500k-1m">$500K - $1M</option>
+                                    <option value="over-1m">Over $1M</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name*</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Job Title*</label>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address*</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional-info">Additional Information</label>
+                            <textarea id="additional-info" name="additional-info" rows="4" placeholder="Tell us about your specific storage requirements, constraints, or goals..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">Get My Storage Assessment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateStorageROI() {
+            const currentSpace = parseFloat(document.getElementById('current-space').value) || 0;
+            const currentUtilization = parseFloat(document.getElementById('storage-utilization').value) || 0;
+            const realEstateCost = parseFloat(document.getElementById('real-estate-cost').value) || 0;
+            
+            if (currentSpace > 0 && currentUtilization > 0 && realEstateCost > 0) {
+                // Calculate optimized utilization (assume 85% with proper racking)
+                const optimizedUtilization = 85;
+                const utilizationGain = (optimizedUtilization - currentUtilization) / currentUtilization;
+                
+                // Calculate space and savings
+                const spaceGained = currentSpace * utilizationGain;
+                const annualSavings = spaceGained * realEstateCost;
+                const capacityIncrease = Math.round(utilizationGain * 100);
+                
+                // Estimate investment and ROI (rough calculation)
+                const estimatedInvestment = currentSpace * 25; // $25/sq ft for racking
+                const roiMonths = Math.round(estimatedInvestment / (annualSavings / 12));
+                
+                // Update display
+                document.getElementById('space-gained').textContent = Math.round(spaceGained).toLocaleString() + ' sq ft';
+                document.getElementById('annual-savings').textContent = '$' + Math.round(annualSavings).toLocaleString();
+                document.getElementById('capacity-increase').textContent = capacityIncrease + '%';
+                document.getElementById('roi-months').textContent = roiMonths + ' mo';
+                
+                document.getElementById('storage-results').style.display = 'block';
+            }
+        }
+
+        document.getElementById('storageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            // Handle regular fields
+            for (let [key, value] of formData.entries()) {
+                if (key !== 'challenges') {
+                    data[key] = value;
+                }
+            }
+            
+            // Handle checkboxes for challenges
+            const challenges = [];
+            const checkboxes = document.querySelectorAll('input[name="challenges"]:checked');
+            checkboxes.forEach(checkbox => {
+                challenges.push(checkbox.value);
+            });
+            data.challenges = challenges;
+            
+            // Calculate lead score for storage solutions
+            let score = 55; // Base score for storage interest
+            
+            // Industry scoring
+            if (data.industry === 'manufacturing') score += 20;
+            else if (data.industry === 'distribution') score += 25;
+            else if (data.industry === 'cold-storage') score += 30;
+            
+            // Size scoring
+            const size = parseInt(data['warehouse-size']) || 0;
+            if (size > 200000) score += 20;
+            else if (size > 100000) score += 15;
+            else if (size > 50000) score += 10;
+            
+            // Budget scoring
+            if (data.budget === 'over-1m') score += 25;
+            else if (data.budget === '500k-1m') score += 20;
+            else if (data.budget === '250k-500k') score += 15;
+            
+            // Timeline scoring
+            if (data.timeline === 'immediate') score += 30;
+            else if (data.timeline === 'short-term') score += 20;
+            
+            // Challenge scoring (more challenges = higher priority)
+            score += challenges.length * 3;
+            
+            data.leadScore = Math.min(score, 100);
+            data.leadType = 'storage_racking';
+            
+            console.log('Storage Lead:', data);
+            
+            alert('Thank you! Our storage optimization specialists will contact you within 24 hours with a preliminary assessment.');
+            this.reset();
+            document.getElementById('storage-results').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
